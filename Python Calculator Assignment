@@ -1,0 +1,67 @@
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Division by zero is not allowed"
+    else:
+        return x / y
+
+def modulus(x, y):
+    if y == 0:
+        return "Modulus by zero is not allowed"
+    else:
+        return x % y
+
+def exponent(x, y):
+    return x ** y
+
+def floor_division(x, y):
+    if y == 0:
+        return "Floor division by zero is not allowed"
+    else:
+        return x // y
+
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide,
+    "%": modulus,
+    "^": exponent,
+    "//": floor_division
+}
+
+def calculator():
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Modulus")
+    print("6. Exponent")
+    print("7. Floor Division")
+
+    while True:
+        choice = input("Enter choice (1/2/3/4/5/6/7): ")
+
+        if choice in ('1', '2', '3', '4', '5', '6', '7'):
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+
+            operation = operations[choice]
+            result = operation(num1, num2)
+
+            print("Result:", result)
+            break
+        else:
+            print("Invalid input")
+
+if __name__ == "__main__":
+    calculator()
